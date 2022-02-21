@@ -1,0 +1,22 @@
+<launch>
+    <!--   ebot -->
+        <param name="robot_description" command="$(find xacro)/xacro '$(find simulation)/urdf/ebot.xacro'"/>
+       
+    <!-- empty gazebo world -->
+       <include file="$(find simulation)/launch/w1.launch" /> 
+        <arg name="x" default="-4.053987"/>
+        <arg name="y" default="-14.894293"/>
+        <arg name="z" default="0.449000"/>
+    
+        <!-- <arg name="x" default="-4.02957"/>
+        <arg name="y" default="-14.425293"/>
+        <arg name="z" default="0.449000"/> -->
+        <!-- <arg name="x" default="0"/>
+        <arg name="y" default="0"./>
+        <arg name="z" default="0"/>-->
+    
+            <!-- Spawn the robot model -->
+        <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" 
+            args="-urdf -param robot_description -model ebot -x $(arg x) -y $(arg y) -z $(arg z)" />
+         
+    </launch>
