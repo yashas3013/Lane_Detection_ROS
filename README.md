@@ -1,6 +1,9 @@
 # Lane_Detection_ROS
 
-
+For lanching the robot:
+```roslaunch simulation bot.launch```
+For running Lane Detection Node:
+```rosrun mov lane2.py```
 
 
 
